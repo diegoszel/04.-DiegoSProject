@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.my_form_class {
+  background-color: #3a3a3a;
+}
+.my_project_case_CSS {
+    display: inline-block;
+    align-content: center;
+    justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #fff;
+}
