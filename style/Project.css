@@ -1,16 +1,73 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+.my_p_case {
+  width: 100%;
+  height: 461px;
+  background-image: url(../images/header-background.png);
+  
+}
+.my_bg_img {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 461px;
+  background: #13e8f163 0% 0% no-repeat padding-box;
+}
+
+.my_header_case{
+  width: 100%;
+height: 118px;
+text-align: right;
+font: normal normal 900 80px/118px Heebo;
+letter-spacing: 0px;
+color: #3A3A3A;
+}
+
+.my_header_parag_case{
+  width: 844px;
+height: 59px;
+text-align: center;
+font: normal normal medium 20px/30px Heebo;
+letter-spacing: 0px;
+color: #3A3A3A;
+}
+
+.my_profile{
+  display: flex;
+  justify-content: start;
+  align-content: center;
+  flex-direction: column;
+  padding: 20px;
+  margin: 20px;
+  width: 100%;
+height: 50vh;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+}
+
+.my_cv_download{
+  width: 260px;
+height: 41px;
+margin: auto;
+background: #1AE0EC 0% 0% no-repeat padding-box;
+border-radius: 25px;
+font: normal normal bold 20px/30px Heebo;
+letter-spacing: 0.3px;
+color: #3A3A3A;
+text-decoration: none;
+}
 .my_form_class {
   background-color: #3a3a3a;
 }
 .my_project_case_CSS {
-    display: inline-block;
-    align-content: center;
-    justify-content: center;
+  display: inline-block;
+  align-content: center;
+  justify-content: center;
   width: 100px;
   height: 100px;
   border: 1px solid #fff;

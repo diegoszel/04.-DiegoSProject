@@ -10,7 +10,14 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./Project/CSS/Project.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style/Project.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-primary-subtle sticky-top">
@@ -51,48 +58,63 @@
     </nav>
     <!-- Project case -->
     <div class="container-fluid">
-      <div >
-        <div class="bg-secondary-subtle p-5">
-        <h2 class="container text-center m-auto">Project Case</h2>
-        <p class="container text-center my-2 gap-2">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-          Dignissimos iure cum aperiam natus.
-        </p>
-      </div>
-        <div class="container d-flex align-items-center m-auto justify-content-center gap-3">
-        <div class="my_project_case_CSS">
-          <img src="./images/html_logo.png" alt="html">
+      <div>
+        <div class="my_p_case">
+          <div class="my_bg_img">
+            <h2 class="container text-center my_header_case">תיק עבודות</h2>
+            <p class="container text-center my_header_parag_case">
+              לורם איפסום או בקיצור ליפסום, הוא מלל מקובל וחסר משמעות המשמש
+              “ממלא מקום” בעת עריכה, בתחום הדפוס, ההדפסה והפרסום. למשל: לורםלורם
+              איפסום או בקיצור לי.
+            </p>
+          </div>
         </div>
-        <div class="my_project_case_CSS">
-          <img src="./images/CSS_logo.png" alt="CSS">
+        <div
+          class="container d-flex align-items-center m-auto justify-content-center gap-3"
+        >
+          <div class="my_project_case_CSS">
+            <img src="./images/html_logo.png" alt="html" />
+          </div>
+          <div class="my_project_case_CSS">
+            <img src="./images/CSS_logo.png" alt="CSS" />
+          </div>
+          <div class="my_project_case_CSS">
+            <img src="./images/Bootstrap_logo.png" alt="Bootstrap" />
+          </div>
+          <div class="my_project_case_CSS">
+            <img src="./images/SASS_logo.png" alt="SASS" />
+          </div>
         </div>
-        <div class="my_project_case_CSS"><img src="./images/Bootstrap_logo.png" alt="Bootstrap"></div>
-        <div class="my_project_case_CSS"><img src="./images/SASS_logo.png" alt="SASS"></div>
-        <!-- <div class="my_project_case_CSS"><img src="/Images/JS_logo.png" alt="JS"></div>
-        <div class="my_project_case_CSS"><img src="/Images/OOP_logo.png" alt="OOP"></div>
-        <div class="my_project_case_CSS"><img src="/Images/ES6_logo.png" alt="ES6"></div>
-        <div class="my_project_case_CSS"><img src="/Images/TypeScript_logo.png" alt="Typescript"></div>
-        <div class="my_project_case_CSS"><img src="/Images/API_logo.png" alt="API"></div>
-        <div class="my_project_case_CSS"><img src="/Images/REACT_logo.png" alt="React"></div>
-        <div class="my_project_case_CSS"><img src="/Images/NodeJS_logo.png" alt="Node"></div> -->
-      </div>
       </div>
     </div>
     <!-- About me -->
-    <div class="container" id="about">
-      <div class=" w-50 m-auto my-4" >
-        <div class="container d-flex align-items-center m-auto justify-content-center">
-        <img src="./images/profile-image.jpg" class="d-flex align-items-center text-center" style="width: 10rem;" alt="..." />
-      </div>
-      
-        <div >
-          <h2 class="container text-center my-3">About me</h2>
-          <p >
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Dignissimos iure cum aperiam natus.
+    <div class="my_profile" id="about">
+      <div class=" ">
+        <div
+          class="container d-flex   justify-content-evenly"
+        >
+          <img
+            src="./images/profile_img.png"
+            
+            style="width: 10rem; border-radius: 145px; "
+            alt="..."
+          />
+        </div>
+
+        <div class="">
+          <h2 class="container text-center my-3">קצת עלי</h2>
+          <p class="container text-center">
+            לורם איפסום או בקיצור ליפסום, הוא מלל מקובל וחסר משמעות המשמש “ממלא
+            מקום” בעת עריכה, בתחום הדפוס, ההדפסה והפרסום. למשל: לורםלורם איפסום
+            או בקיצור ליפסום, הוא מלל מקובל וחסר משמעות . לורם איפסום או בקיצור
+            ליפסוםהמשמש.לורם איפסום או בקיצור ליפסום, הוא מלל מקובל וחסר משמעות
+            . משמש “ממלא מקום” בעת עריכה, בתחום הדפוס, ההדפסה והפרסום. למשל:
+            לורםלורם איפסום או בקיצור ליפסום, הוא מלל מקובל וחסר משמעות . לורם
+            איפסום או בקיצור ליפסוםהמשמש לורם איפסום או בקיצור ליפסום, הוא מלל
+            מקובל.
           </p>
-          <div class="container text-center">
-            <a href="#" class="btn btn-primary"> Go Somewhere</a>
+          <div class="container text-center py-5">
+            <a href="#" class="px-2 my_cv_download"> להורדת קורות חיים</a>
           </div>
         </div>
       </div>
@@ -180,26 +202,19 @@
         </div>
       </div>
     </div>
-    <div class="container d-flex flex-lg-row-reverse my_form_class" id="contact">
+    <div
+      class="container d-flex flex-lg-row-reverse my_form_class"
+      id="contact"
+    >
       <div class="d-flex">
-        <img
-            src="/Project/Images/Rectangle 41.png"
-            alt=""
-            class="float-start w-100"
-          />
+        <img src="./images/Rectangle 41.png" alt="" class="float-start w-100" />
       </div>
       <!-- Form -->
       <form
         class="container w-100 m-auto p-5 d-flex flex-column align-items-lg-start my_form_class"
       >
         <h2 class="w-100 text-white">Contact us</h2>
-        <!-- <div>
-          <img
-            src="/Project/Images/Rectangle 41.png"
-            alt=""
-            class="float-start w-25"
-          />
-        </div> -->
+
         <div class="form-group w-50 text-white">
           <label for="name">Name</label>
           <input
