@@ -1,0 +1,143 @@
+/* Fonts */
+$heebo: Heebo;
+
+/* Colors */
+$white: #ffffff;
+$black: #1a1a1ad4;
+$pink: #d31c75;
+$grey: #f9f9f9;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+}
+
+.upper {
+  width: 100%;
+  height: 60vh;
+  background: transparent url("./images/Path\ 15.png") 0% 0% no-repeat
+    padding-box;
+  background-size: cover;
+}
+
+.downer {
+  width: 100%;
+  height: 40vh;
+  background: $white 0% 0% no-repeat padding-box;
+}
+
+.side_text {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 15%;
+  top: 19%;
+  width: 569px;
+  height: 643px;
+  background: $black 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 13% 13% 10% 13%;
+}
+h1 {
+  width: 100%;
+  height: 53px;
+  text-align: right;
+  font: normal normal 900 36px/53px $heebo;
+  color: $white;
+  opacity: 1;
+}
+
+p {
+  width: 100%;
+  height: 58px;
+  text-align: right;
+  font: normal normal normal 20px/29px $heebo;
+  color: $grey;
+}
+
+form {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0% 13%;
+}
+label {
+  width: 58px;
+  height: 24px;
+  text-align: right;
+  font: normal normal bold 16px/24px $heebo;
+  color: $white;
+}
+.editInput {
+  width: 100%;
+  height: 50px;
+  background: $white 0% 0% no-repeat padding-box;
+  border: 1px solid $pink;
+}
+#experienceSubmit {
+  width: 166px;
+  height: 50px;
+  background: $pink 0% 0% no-repeat padding-box;
+  right: 0%;
+  font: normal normal bold 22px/30px $heebo;
+  color: $white;
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .upper {
+    height: 30vh !important;
+  }
+  .downer {
+    height: 70vh !important;
+  }
+  .side_text {
+    top: 13%;
+    right: 10%;
+    width: 80%;
+    height: 65vh;
+  }
+  h1 {
+    margin: auto;
+    width: 80%;
+    height: 67px;
+    font: normal normal 900 25px/30px $heebo;
+    text-align: center;
+  }
+  p {
+    width: 100%;
+    height: 66px;
+    text-align: center;
+    font: normal normal normal 15px/22px $heebo;
+    padding-top: 5%;
+  }
+  label {
+    width: 51px;
+    height: 21px;
+    font: normal normal bold 14px/21px $heebo;
+  }
+  .editInput {
+    width: 100%;
+    height: 28px;
+  }
+  #experienceSubmit {
+    width: 76px;
+    height: 33px;
+    right: 0%;
+    font: normal normal bold 15px/20px $heebo;
+    letter-spacing: 0.23px;
+    margin-top: 5px;
+  }
+}
