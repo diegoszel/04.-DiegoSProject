@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Assistant";
+}
+
+body {
+  background: #e5eeff;
+  display: grid;
+  justify-content: center;
+  padding: 8%;
+}
+
+main {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  margin-block: 300px 270px;
+  margin-inline: auto;
+}
+
+
+
+.box img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#box1 {
+  grid-area: 1/1/3/3;
+  background-color: #020253;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding-inline: 70px;
+  margin: 1px;
+}
+
+#box16 {
+  grid-area: 4/3/7/5;
+  background: #8e097c;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-inline: 10%;
+}
+
+h1 {
+  color: #0ee1da;
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding-bottom: 40px;
+}
+
+h2 {
+  color: #f9f9f9;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding-bottom: 40px;
+}
+
+p {
+  color: #f9f9f9;
+  font-size: 1.5rem;
+  
+}
+
+label {
+  color: #0ee1da;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+form {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: -100px;
+}
+
+.editInput {
+  height: 3rem;
+  width: 100%;
+  border-bottom: 5px solid #0ee1da;
+  resize: none;
+  line-break: strict;
+}
+
+#experience {
+  height: 10.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+#experienceSubmit {
+  background: #0ee1da;
+  color: #011560;
+  font-size: 2rem;
+  font-weight: 900;
+  padding: 2%;
+}
+
+@media (max-width: 780px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  label {
+    font-size: 0.75rem;
+  }
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+
+    margin: 0;
+    gap: 20px;
+  }
+  main > div:nth-child(1) {
+    margin: -20px -20px 0px -20px;
+  }
+  #expirience {
+    height: 4.5rem;
+  }
+  .editInput {
+    height: 1.5rem;
+  }
+  #box16 {
+    grid-area: 6/1/9/3;
+  }
+  #experienceSubmit {
+    font-size: 1rem;
+    font-weight: 900;
+    padding: 2%;
+  }
+  body {
+    padding: 20px;
+  }
+}
