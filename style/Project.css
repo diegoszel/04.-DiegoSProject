@@ -317,7 +317,7 @@ nav .navRight a {
 
 #portfolio .wrapper .portfolioItem{
   border-radius: 20px;
-  background-color: #000000;
+  background-color: #C7AE6A;
 }
 
 #portfolio .wrapper .portfolioItem img{
@@ -358,8 +358,8 @@ nav .navRight a {
   display: block;
   width: 200px;
   margin: 20px auto;
-  background-color: #C7AE6A;
-  color: #172a33;
+  background-color: #000000;
+  
 }
 
 @media (max-width: 1200px) {
