@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Page Builder</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page-builder">
+      <div class="toolbar">
+        <h2>Toolbar</h2>
+        <button data-element="heading">Add Heading</button>
+        <button data-element="paragraph">Add Paragraph</button>
+        <button data-element="image">Add Image</button>
+        <button data-element="card">Add Card</button>
+        <button data-element="div">Add Div</button>
+        <button id="clear">Clear Canvas</button>
+        <button id="save-page">Save Page</button>
+      </div>
+
+      <div class="canvas-container">
+        <div class="canvas" id="canvas"></div>
+      </div>
+
+      <div class="style-editor">
+        <h2>Style Editor</h2>
+        <label for="text-content">Text:</label>
+        <input type="text" id="text-content" placeholder="Edit text content" />
+
+        <label for="align-horizontal">Horizontal Alignment:</label>
+        <select id="align-horizontal">
+          <option value="left">Left</option>
+          <option value="center">Center</option>
+          <option value="right">Right</option>
+        </select>
+
+        <label for="align-vertical">Vertical Alignment:</label>
+        <select id="align-vertical">
+          <option value="top">Top</option>
+          <option value="middle">Middle</option>
+          <option value="bottom">Bottom</option>
+        </select>
+
+        <label for="font-size">Font Size:</label>
+        <input type="number" id="font-size" min="12" max="72" step="2" />
+
+        <label for="color">Text Color:</label>
+        <input type="color" id="color" />
+
+        <label for="bg-color">Element Background Color:</label>
+        <input type="color" id="bg-color" />
+
+        <label for="padding">Padding:</label>
+        <input type="number" id="padding" min="0" max="100" />
+
+        <label for="margin">Margin:</label>
+        <input type="number" id="margin" min="0" max="100" />
+
+        <label for="width">Width (px):</label>
+        <input type="number" id="width" />
+
+        <label for="height">Height (px):</label>
+        <input type="number" id="height" />
+
+        <label for="canvas-bg-color">Canvas Background Color:</label>
+        <input type="color" id="canvas-bg-color" />
+
+        <label for="border-color">Border Color:</label>
+        <input type="color" id="border-color" />
+
+        <label for="border-style">Border Style:</label>
+        <select id="border-style">
+          <option value="solid">Solid</option>
+          <option value="dashed">Dashed</option>
+          <option value="dotted">Dotted</option>
+        </select>
+
+        <label for="border-width">Border Width:</label>
+        <input type="number" id="border-width" min="0" max="10" />
+
+        <label for="border-radius">Border Radius:</label>
+        <input type="number" id="border-radius" min="0" max="50" />
+
+        <label for="box-shadow">Box Shadow:</label>
+        <input type="text" id="box-shadow" placeholder="0px 0px 0px #000000" />
+
+        <label for="font-family">Font Family:</label>
+        <select id="font-family">
+          <option value="Arial">Arial</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Courier New">Courier New</option>
+        </select>
+
+        <label for="font-weight">Font Weight:</label>
+        <select id="font-weight">
+          <option value="normal">Normal</option>
+          <option value="bold">Bold</option>
+          <option value="italic">Italic</option>
+        </select>
+
+        <label for="font-style">Font Style:</label>
+        <select id="font-style">
+          <option value="normal">Normal</option>
+          <option value="italic">Italic</option>
+        </select>
+
+        <label for="align-text">Align Text to Center:</label>
+        <input type="checkbox" id="align-text" />
+
+        <button id="apply-styles">Apply Styles</button>
+
+        <!-- <div id="background-panel">
+        <h3>Canvas Background</h3>
+        <div class="color-palette">
+          <button class="bg-btn" data-color="white" style="background-color: white;">White</button>
+          <button class="bg-btn" data-color="lightgray" style="background-color: lightgray;">Gray</button>
+          <button class="bg-btn" data-color="lightblue" style="background-color: lightblue;">Blue</button>
+          <button class="bg-btn" data-color="lightgreen" style="background-color: lightgreen;">Green</button>
+          <button class="bg-btn" data-color="lightcoral" style="background-color: lightcoral;">Coral</button>
+          <button class="bg-btn" data-color="lavender" style="background-color: lavender;">Lavender</button>
+          <button class="bg-btn" data-color="pink" style="background-color: pink;">Pink</button>
+          <button class="bg-btn" data-color="yellow" style="background-color: yellow;">Yellow</button>
+          <button class="bg-btn" data-color="black" style="background-color: black; color: white;">Black</button>
+        </div>
+      </div> -->
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

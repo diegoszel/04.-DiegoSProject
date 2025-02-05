@@ -1,0 +1,95 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  font-family: 'Arial', sans-serif;
+  position: relative;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  gap: 10px;
+  position: relative;
+}
+
+.record-table {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 15px;
+  width: 300px;
+  color: white;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+.record-table h2 {
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.record-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.record-list li {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.color-button {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.color-button:active {
+  transform: scale(0.9);
+}
+
+.green { background: linear-gradient(to bottom, #32cd32, #228b22); }
+.red { background: linear-gradient(to bottom, #ff6347, #b22222); }
+.yellow { background: linear-gradient(to bottom, #ffd700, #ffb900); }
+.blue { background: linear-gradient(to bottom, #1e90ff, #00008b); }
+
+.display {
+  position: absolute;
+  top: -70px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.start-btn {
+  position: relative;
+  grid-column: span 2;
+  justify-self: center;
+  padding: 10px 20px;
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.start-btn:hover {
+  background-color: #b22222;
+}
