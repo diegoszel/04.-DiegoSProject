@@ -93,3 +93,14 @@ body {
 .start-btn:hover {
   background-color: #b22222;
 }
+
+@media (max-width: 768px) {
+  .record-table {
+    display: flex;
+    flex-direction: column;
+    position: static;
+    margin-top: 150px;
+  }
+}
+  
+  
