@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Quiz Game</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f4f4f9;
+        margin: 0;
+        height: 100vh;
+      }
+
+      .container {
+        
+        text-align: center;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 500px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      .question {
+        font-size: 1.5rem;
+        margin: 20px 0;
+      }
+
+      .difficulty {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 1rem;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .result {
+        margin-top: 20px;
+        font-size: 1.2rem;
+        color: #28a745;
+      }
+
+      table {
+        margin-top: 20px;
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #007bff;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Math Quiz Game</h1>
+      <div class="difficulty">
+        <label for="difficulty">Select Difficulty:</label>
+        <select id="difficulty">
+          <option value="10">1-10</option>
+          <option value="100">1-100</option>
+          <option value="1000">1-1000</option>
+        </select>
+        <div class="operator">
+          <label for="operator">Select Operator:</label>
+          <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+          </select>
+        </div>
+      </div>
+      <div id="question-container">
+        <div class="question" id="question">Press "Start" to Begin!</div>
+        <input type="number" id="answer" placeholder="Your answer" />
+        <button onclick="checkAnswer()">Submit</button>
+      </div>
+      <button onclick="startQuiz()">Start</button>
+      <div class="result" id="result"></div>
+      <table id="history">
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Your Answer</th>
+            <th>Correct Answer</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script>
+      let score = 0;
+      let totalQuestions = 0;
+      let currentQuestion = null;
+
+      // Load history from localStorage on page load
+      window.onload = () => {
+        loadHistory();
+      };
+
+      function startQuiz() {
+        score = 0;
+        totalQuestions = 0;
+        document.getElementById("result").textContent = "";
+        document.querySelector("#history tbody").innerHTML = "";
+        nextQuestion();
+      }
+
+      function nextQuestion() {
+        const difficulty = parseInt(
+          document.getElementById("difficulty").value
+        );
+        const operator = document.getElementById("operator").value;
+        const num1 = Math.floor(Math.random() * difficulty) + 1;
+        const num2 = Math.floor(Math.random() * difficulty) + 1;
+
+        currentQuestion = {
+          num1,
+          num2,
+          operator,
+          answer: calculateAnswer(num1, num2, operator),
+        };
+
+        document.getElementById(
+          "question"
+        ).textContent = `${num1} ${operator} ${num2}`;
+        document.getElementById("answer").value = "";
+      }
+
+      function calculateAnswer(num1, num2, operator) {
+        switch (operator) {
+          case "+":
+            return num1 + num2;
+          case "-":
+            return num1 - num2;
+          case "*":
+            return num1 * num2;
+          case "/":
+            return parseFloat((num1 / num2).toFixed(2));
+        }
+      }
+
+      function checkAnswer() {
+        const userAnswer = parseFloat(document.getElementById("answer").value);
+        if (isNaN(userAnswer)) {
+          alert("Please enter a valid number.");
+          return;
+        }
+
+        totalQuestions++;
+        const isCorrect = userAnswer === currentQuestion.answer;
+        if (isCorrect) {
+          score++;
+        }
+
+        updateHistory(
+          currentQuestion.num1,
+          currentQuestion.num2,
+          currentQuestion.operator,
+          userAnswer,
+          currentQuestion.answer,
+          isCorrect
+        );
+
+        if (totalQuestions < 10) {
+          nextQuestion();
+        } else {
+          document.getElementById(
+            "result"
+          ).textContent = `You got ${score} out of 10 questions correct!`;
+          document.getElementById("question").textContent = "Game Over!";
+        }
+      }
+
+      function updateHistory(
+        num1,
+        num2,
+        operator,
+        userAnswer,
+        correctAnswer,
+        isCorrect
+      ) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${num1} ${operator} ${num2}</td>
+          <td>${userAnswer}</td>
+          <td>${correctAnswer}</td>
+          <td>${isCorrect ? "✔️" : "❌"}</td>
+        `;
+        document.querySelector("#history tbody").appendChild(row);
+
+        // Save to localStorage
+        saveToLocalStorage(num1, num2, operator, userAnswer, correctAnswer, isCorrect);
+      }
+
+      function saveToLocalStorage(num1, num2, operator, userAnswer, correctAnswer, isCorrect) {
+        const history = JSON.parse(localStorage.getItem("quizHistory")) || [];
+        history.push({ num1, num2, operator, userAnswer, correctAnswer, isCorrect });
+        localStorage.setItem("quizHistory", JSON.stringify(history));
+      }
+
+      function loadHistory() {
+        const history = JSON.parse(localStorage.getItem("quizHistory")) || [];
+        const tbody = document.querySelector("#history tbody");
+        history.forEach(entry => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${entry.num1} ${entry.operator} ${entry.num2}</td>
+            <td>${entry.userAnswer}</td>
+            <td>${entry.correctAnswer}</td>
+            <td>${entry.isCorrect ? "✔️" : "❌"}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      }
+    </script>
+  </body>
+</html>

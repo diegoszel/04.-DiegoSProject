@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="stats">
+      <div>Moves: <span id="moves">0</span></div>
+      <div>Pairs Found: <span id="pairs">0</span> / 6</div>
+    </div>
+    <div class="high-scores">
+      <h3>Best Scores</h3>
+      <div id="highScores"></div>
+    </div>
+    <div class="game-container" id="gameContainer"></div>
+    <button class="restart-btn" onclick="restartGame()">Restart Game</button>
+    <button class="clear-scores" onclick="clearHighScores()">
+      Clear High Scores
+    </button>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
