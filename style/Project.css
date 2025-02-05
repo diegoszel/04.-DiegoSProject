@@ -6,6 +6,10 @@
   font-family: "Kumbh Sans";
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #172a33;
 }

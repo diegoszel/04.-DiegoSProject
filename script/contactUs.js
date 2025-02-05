@@ -67,6 +67,8 @@ export const contactUs = () => {
     checkFormIsValid();
   });
 
+  // email must be a valid email address
+
   email.addEventListener("input", (e) => {
     const value = e.target.value;
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
@@ -82,6 +84,7 @@ export const contactUs = () => {
     }
     checkFormIsValid();
   });
+
   // phone number must be at least 10 digits long and contain only numbers
   phone.addEventListener("input", (e) => {
     const value = e.target.value;
