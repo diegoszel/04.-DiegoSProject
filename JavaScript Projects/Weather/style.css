@@ -129,6 +129,14 @@ nav label {
   object-fit: contain;
 }
 
+@media (min-width: 2000px) {
+    .current-widget .time-wrapper{
+        position: absolute;
+        top: 18%;
+        left: 37%;
+        
+}}
+
 .forecast-widget {
   width: 100%;
   height: 100%;
