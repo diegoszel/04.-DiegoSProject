@@ -526,6 +526,7 @@ nav .navRight a {
   background-color: #172a33;
   font-size: 1.5em;
   font-weight: 600;
+  cursor: pointer;
 }
 
 #contact img {
