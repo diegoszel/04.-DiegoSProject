@@ -7,6 +7,7 @@
 }
 
 html {
+  zoom: 67%;
   scroll-behavior: smooth;
 }
 
@@ -15,7 +16,7 @@ body {
 }
 
 .container {
-  width: 80vw;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -71,7 +72,7 @@ a {
 nav {
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   max-width: 100%;
   height: 75px;
   padding: 0 50px;
@@ -220,7 +221,7 @@ nav .navRight a {
 }
 
 #logoBanner {
-  width: 100vw;
+  width: 100%;
   max-width: 100%;
   height: 75px;
   max-width: 100%;
@@ -477,10 +478,12 @@ nav .navRight a {
 }
 
 #contact {
-  width: 80vw;
+  width: 80%;
   height: 700px;
-  margin: 30px 0;
+  margin: 50px auto;
   display: grid;
+  justify-content: center;
+  
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: 1fr;
   overflow: hidden;
@@ -589,7 +592,7 @@ input[type="tel"]:focus {
 }
 
 #footer {
-  width: 100vw;
+  width: 100%;
   max-width: 100%;
   padding: 50px;
   background-color: #172a33;

@@ -23,6 +23,8 @@ document.getElementById("highScore").textContent = "High Score: " + highScore;
 
 function setup() {
   document.addEventListener("keydown", changeDirection);
+  document.addEventListener("touchstart", changeDirection);
+  document.addEventListener("touchmove", changeDirection);
   gameLoop();
 }
 
@@ -104,10 +106,34 @@ function spawnFood() {
 }
 
 function changeDirection(event) {
-  if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
-  if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
-  if (event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
-  if (event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
+  if (event.type === "keydown") {
+    // Handle keyboard events as before
+    if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
+    if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
+    if (event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
+    if (event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
+  } else if (event.type === "touchstart" || event.type === "touchmove") {
+    // Handle touch events
+    const touch = event.touches[0];
+    const canvasRect = canvas.getBoundingClientRect();
+    const touchX = touch.clientX - canvasRect.left;
+    const touchY = touch.clientY - canvasRect.top;
+
+    // Determine the direction based on the touch position
+    if (touchX < canvasRect.width / 2 && touchY < canvasRect.height / 2) {
+      // Top-left quadrant
+      direction = "UP";
+    } else if (touchX < canvasRect.width / 2 && touchY > canvasRect.height / 2) {
+      // Bottom-left quadrant
+      direction = "LEFT";
+    } else if (touchX > canvasRect.width / 2 && touchY < canvasRect.height / 2) {
+      // Top-right quadrant
+      direction = "RIGHT";
+    } else if (touchX > canvasRect.width / 2 && touchY > canvasRect.height / 2) {
+      // Bottom-right quadrant
+      direction = "DOWN";
+    }
+  }
 }
 
 function checkCollisions() {
